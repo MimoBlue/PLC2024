@@ -5,10 +5,12 @@ ask prompt =
   line <- getLine
   if line == ""
     then ask prompt
-    else putStrLn ("you said: " ++ reverse line)
+  else if line == "quit"
+    then print("quitting...")
+  else putStrLn ("you said: " ++ reverse line)
 
 main :: IO ()
 main =
   do
-  let prompt = "please say something"
+  let prompt = "please say something" 
   ask prompt
